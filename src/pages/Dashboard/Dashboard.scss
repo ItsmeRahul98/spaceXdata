@@ -1,0 +1,175 @@
+.mainContainer {
+  display: flex;
+  padding: 40px;
+  min-height: 100vh;
+  .subContainer {
+    background: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding: 5px;
+
+    .title {
+      color: #000;
+      margin: 0;
+    }
+    .filterBar {
+    }
+
+    .dataContainer {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      .filterBar {
+        width: 20%;
+        .sideBar {
+          background: #fff;
+          border-radius: 8px;
+          margin: 6px;
+          padding: 10px;
+          .title {
+            font-size: 20px;
+            display: block;
+            text-align: left;
+          }
+          .subtitle {
+            font-size: 18px;
+            display: block;
+            font-weight: 500;
+            position: relative;
+            padding-bottom: 6px;
+            &::after {
+              content: "";
+              position: absolute;
+              bottom: 0;
+              width: 80%;
+              left: 50%;
+              transform: translateX(-50%);
+              height: 2px;
+              display: block;
+              background: #eeeae9;
+            }
+          }
+          .list {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+          }
+          .launchYearView {
+            margin-bottom: 10px;
+          }
+          .launchView {
+            margin-bottom: 10px;
+          }
+        }
+      }
+      .cardContainer {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 100%;
+        height: 100%;
+
+        .loader {
+          display: flex;
+          height: 100%;
+          width: 100%;
+          align-items: center;
+          justify-content: center;
+          .spinner {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            div {
+              box-sizing: border-box;
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              border: 10px solid transparent;
+              border-top-color: #5358a4;
+              border-radius: 50%;
+              animation: spinnerOne 1.2s linear infinite;
+              &:nth-child(2) {
+                border: 10px solid transparent;
+                border-bottom-color: #5358a4;
+                animation: spinnerTwo 1.2s linear infinite;
+              }
+              @keyframes spinnerOne {
+                0% {
+                  transform: rotate(0deg);
+                  border-width: 10px;
+                }
+                50% {
+                  transform: rotate(180deg);
+                  border-width: 1px;
+                }
+                100% {
+                  transform: rotate(360deg);
+                  border-width: 10px;
+                }
+              }
+            }
+            @keyframes spinnerTwo {
+              0% {
+                transform: rotate(0deg);
+                border-width: 1px;
+              }
+              50% {
+                transform: rotate(180deg);
+                border-width: 10px;
+              }
+              100% {
+                transform: rotate(360deg);
+                border-width: 1px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .mainContainer {
+    padding: 10px;
+    .subContainer {
+      .title {
+        font-size: 18px;
+      }
+      .dataContainer {
+        .cardContainer {
+          .cardMain {
+            width: 50%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .mainContainer {
+    padding: 10px;
+    .subContainer {
+      .title {
+        font-size: 18px;
+      }
+      .dataContainer {
+        flex-direction: column;
+        .filterBar {
+          width: 100%;
+        }
+        .cardContainer {
+          width: 100%;
+          .cardMain {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
