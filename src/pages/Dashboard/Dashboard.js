@@ -66,8 +66,8 @@ const Dashboard = ({ }) => {
                   Launch Year
                 </span>
                 <div className="list">
-                  {yearGroup.map((year) => {
-                    return (<GreenBtn title={year} onClick={() => onYearFilterApply(year)} />)
+                  {yearGroup.map((year, index) => {
+                    return (<GreenBtn key={index} title={year} onClick={() => onYearFilterApply(year)} />)
                   })}
 
 
@@ -94,9 +94,9 @@ const Dashboard = ({ }) => {
             </div>
           </aside>
           <section className="cardContainer">
-            {data.map((item) => {
+            {data.map((item, index) => {
               return (
-                <Card item={item} />
+                <Card key={index} item={item} />
               )
             })}
 

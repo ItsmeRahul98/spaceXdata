@@ -1,4 +1,4 @@
-var CACHE_NAME = 'pwa-task-manager';
+var CACHE_NAME = 'space-DataCache';
 var urlsToCache = [
     '/',
     '/completed'
